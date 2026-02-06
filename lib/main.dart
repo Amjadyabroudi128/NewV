@@ -44,8 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            Image.asset(
+              'gifs/jumping.gif',
+              width: 150,
+              height: 150,
+            ),
+            SizedBox(height: 10,),
             Text(
-              'Hello ',
+              "Will you be my Valentine ? 👀",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
