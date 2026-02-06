@@ -1,0 +1,1 @@
+enum MyAnswer {yes, no}

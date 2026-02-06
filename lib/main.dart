@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valentine/enums/yup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -30,10 +32,36 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   double yesButtonSize = 16;
-  String noText = "NO";
+  MyAnswer? answer; // enum state
+
+  final List<String> noMessages = [
+    "NO 😐",
+    "Are you sure? 😅",
+    "Come on… really? 👀",
+    "That’s cold 🥶",
+    "Last chance 😏",
+    "You’re breaking my heart 💔",
+    "Okay wow 😭",
+    "Don’t do me like this 😩",
+  ];
+
+  int noIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final maxYesFontSize = screenWidth * 0.19;
+
+    // Decide image based on enum (handles null too)
+    final String gifPath = (answer == MyAnswer.yes)
+        ? 'gifs/hugme.gif'
+        : 'gifs/jumping.gif';
+
+    // Decide text based on enum (handles null too)
+    final String titleText = (answer == MyAnswer.yes)
+        ? "Yaaaay I love you 😍"
+        : "Will you be my Valentine? 👀";
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -44,13 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'gifs/jumping.gif',
+              gifPath,
               width: 150,
               height: 150,
             ),
             const SizedBox(height: 10),
             Text(
-              "Will you be my Valentine? 👀",
+              titleText,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
@@ -62,26 +90,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   duration: const Duration(milliseconds: 300),
                   child: MaterialButton(
                     color: Colors.green,
+                    onPressed: () {
+                      setState(() {
+                        answer = MyAnswer.yes;
+                        yesButtonSize = 16;
+                        noIndex = 0;
+                      });
+                    },
                     child: Text(
                       "YES",
-                      style: TextStyle(fontSize: yesButtonSize),
+                      style: TextStyle(
+                        fontSize: yesButtonSize.clamp(16, maxYesFontSize),
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("YAY 😍 Best decision ever!")),
-                      );
-                    },
                   ),
                 ),
                 MaterialButton(
                   color: Colors.red,
-                  child: Text(noText),
                   onPressed: () {
                     setState(() {
-                      yesButtonSize += 6; // make YES bigger
-                      noText = "Are you sure? 😅";
+                      answer = MyAnswer.no;
+                      yesButtonSize =
+                          (yesButtonSize + 6).clamp(16, maxYesFontSize);
+                      noIndex = (noIndex + 1) % noMessages.length;
                     });
                   },
+                  child: Text(
+                    noMessages[noIndex],
+                    style: const TextStyle(color: Colors.white),
+                  ),
                 ),
               ],
             )
