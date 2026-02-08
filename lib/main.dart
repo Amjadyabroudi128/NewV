@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
                   child: MaterialButton(
-                    color: Colors.green,
+                    color: MyColors.yes,
                     onPressed: () {
                       setState(() {
                         answer = MyAnswer.yes;
