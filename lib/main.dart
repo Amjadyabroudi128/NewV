@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valentine/core/myColors.dart';
 import 'package:valentine/enums/yup.dart';
 
 void main() {
@@ -108,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 MaterialButton(
-                  color: Colors.red,
+                  color: MyColors.no,
                   onPressed: () {
                     setState(() {
                       answer = MyAnswer.no;
