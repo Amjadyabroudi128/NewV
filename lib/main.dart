@@ -34,16 +34,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   double yesButtonSize = 16;
   MyAnswer? answer; // enum state
-
+  double noBtn =  16;
   final List<String> noMessages = [
     "NO 😐",
     "Are you sure? 😅",
     "Come on… really? 👀",
     "That’s cold 🥶",
-    "Last chance 😏",
     "You’re breaking my heart 💔",
-    "Okay wow 😭",
-    "Don’t do me like this 😩",
   ];
 
   int noIndex = 0;
