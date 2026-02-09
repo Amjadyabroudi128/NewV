@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text(
                     noMessages[noIndex],
-                    style: const TextStyle(color: Colors.white),
+                    style:  TextStyle(color: MyColors.noMessage),
                   ),
                 ),
               ],
