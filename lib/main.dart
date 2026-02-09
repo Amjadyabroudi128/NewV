@@ -49,13 +49,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final maxYesFontSize = screenWidth * 0.19;
-
-    // Decide image based on enum (handles null too)
-    final String gifPath = (answer == MyAnswer.yes)
-        ? 'gifs/hugme.gif'
-        : 'gifs/jumping.gif';
-
-    // Decide text based on enum (handles null too)
     final String titleText = (answer == MyAnswer.yes)
         ? "Yaaaay I love you 😍"
         : "Will you be my Valentine? 👀";
@@ -69,8 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            if(answer == MyAnswer.yes)
             Image.asset(
-              gifPath,
+              'gifs/hugme.gif',
+              width: 150,
+              height: 150,
+            ) else Image.asset(
+              'gifs/jumping.gif',
               width: 150,
               height: 150,
             ),
