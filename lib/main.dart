@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               titleText,
               style: Theme.of(context).textTheme.headlineMedium,
-              textAlign: TextAlign.center,
+              textAlign: .center,
             ),
             const SizedBox(height: 18),
             Row(
@@ -97,8 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       "YES",
                       style: TextStyle(
                         fontSize: yesButtonSize.clamp(16, maxYesFontSize),
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        color: MyColors.noMessage,
+                        fontWeight: .bold,
                       ),
                     ),
                   ),
