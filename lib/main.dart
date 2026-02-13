@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             if(answer == MyAnswer.yes)
             MyImage(
-              'gifs/hugme.gif',
+              myImage: 'gifs/hugme.gif',
               myHeight: 150,
               myWidth: 150,
             ) else Image.asset(
