@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valentine/core/images.dart';
 import 'package:valentine/core/myColors.dart';
 import 'package:valentine/enums/yup.dart';
 
@@ -58,10 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: .center,
           children: [
             if(answer == MyAnswer.yes)
-            Image.asset(
+            MyImage(
               'gifs/hugme.gif',
-              width: 150,
-              height: 150,
+              myHeight: 150,
+              myWidth: 150,
             ) else Image.asset(
               'gifs/jumping.gif',
               width: 150,
