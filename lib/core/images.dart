@@ -10,8 +10,8 @@ class MyImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       myImage,
-      height: myHeight,
-      width: myWidth,
+      height: 150,
+      width: 150,
     );
   }
 }
