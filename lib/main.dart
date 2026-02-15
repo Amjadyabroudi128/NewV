@@ -61,12 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
             if(answer == MyAnswer.yes)
             MyImage(
               myImage: 'gifs/hugme.gif',
-              myHeight: 150,
-              myWidth: 150,
             ) else MyImage(
               myImage: 'gifs/jumping.gif',
-              myWidth: 150,
-              myHeight: 150,
             ),
             const SizedBox(height: 10),
             Text(
