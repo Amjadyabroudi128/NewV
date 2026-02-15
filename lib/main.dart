@@ -67,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 10),
             Text(
               titleText,
-              style: Theme.of(context).textTheme.headlineMedium,
               textAlign: .center,
             ),
             const SizedBox(height: 18),
