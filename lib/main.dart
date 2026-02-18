@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:valentine/core/MaterialButton.dart';
 import 'package:valentine/core/images.dart';
 import 'package:valentine/core/myColors.dart';
 import 'package:valentine/enums/yup.dart';
@@ -93,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                MaterialButton(
+                MyBtn(
                   color: MyColors.no,
                   onPressed: () {
                     setState(() {
