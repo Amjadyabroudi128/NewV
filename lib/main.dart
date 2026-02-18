@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 18),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: .spaceEvenly,
               children: [
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
