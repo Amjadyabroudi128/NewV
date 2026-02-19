@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
-                  child: MaterialButton(
+                  child: MyBtn(
                     color: MyColors.yes,
                     onPressed: () {
                       setState(() {
