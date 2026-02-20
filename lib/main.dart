@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valentine/core/MaterialButton.dart';
 import 'package:valentine/core/images.dart';
 import 'package:valentine/core/myColors.dart';
+import 'package:valentine/core/textStyles.dart';
 import 'package:valentine/enums/yup.dart';
 
 void main() {
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text(
                     noMessages[noIndex],
-                    style:  TextStyle(color: MyColors.noMessage),
+                    style:  myTstyles.noMessage,
                   ),
                 ),
               ],
