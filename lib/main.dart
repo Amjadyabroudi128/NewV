@@ -87,11 +87,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       "YES",
-                      style: TextStyle(
-                        fontSize: yesButtonSize.clamp(16, maxYesFontSize),
-                        color: MyColors.noMessage,
-                        fontWeight: .bold,
-                      ),
+                      style: myTstyles.yes(context,
+                          MyColors.noMessage,
+                          yesButtonSize.clamp(16, maxYesFontSize),
+                          .bold),
                     ),
                   ),
                 ),
