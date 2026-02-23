@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:valentine/core/MaterialButton.dart';
 import 'package:valentine/core/images.dart';
 import 'package:valentine/core/myColors.dart';
+import 'package:valentine/core/sizedBox.dart';
 import 'package:valentine/core/textStyles.dart';
 import 'package:valentine/enums/yup.dart';
 
@@ -65,12 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ) else MyImage(
               myImage: 'gifs/jumping.gif',
             ),
-            const SizedBox(height: 10),
+            myBox(myHeight: 10,),
             Text(
               titleText,
               textAlign: .center,
             ),
-            const SizedBox(height: 18),
+            myBox(myHeight: 18,),
             Row(
               mainAxisAlignment: .spaceEvenly,
               children: [
